@@ -1,0 +1,26 @@
+{
+  "name": "voiceit-ivr-demo",
+  "version": "1.0.0",
+  "description": "A Demo showing an integration of Twilio's and VoiceIt's API for Voice Biometrics over an IVR System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voiceittech/voiceit-ivr-demo.git"
+  },
+  "author": "Armaan Bindra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/voiceittech/voiceit-ivr-demo/issues"
+  },
+  "homepage": "https://github.com/voiceittech/voiceit-ivr-demo#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "crypto": "0.0.3",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.15.3"
+  }
+}
