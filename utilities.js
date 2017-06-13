@@ -1,8 +1,8 @@
 const utilities = {
-  speak:(twiml, textToSpeak)=>{
+  speak:(twiml, textToSpeak, contentLanguage = "en-US")=>{
     twiml.say(textToSpeak, {
       voice: "alice",
-      language: process.env.CONTENT_LANGUAGE
+      language: contentLanguage
     });
   },
   removeSpecialChars:(text)=>{

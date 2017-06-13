@@ -146,7 +146,7 @@ app.post('/enroll', function(req, res) {
   const enrollCount = req.query.enrollCount || 0;
   const twiml = new VoiceResponse();
   utilities.speak(twiml, 'Please say the following phrase to enroll ');
-  utilities.speak(twiml, config.chosenVoicePrintPhrase);
+  utilities.speak(twiml, config.chosenVoicePrintPhrase, config.contentLanguage);
 
   twiml.record({
     action: '/process_enrollment?enrollCount=' + enrollCount,
@@ -225,7 +225,7 @@ app.post('/authenticate', function(req, res) {
   var twiml = new VoiceResponse();
 
   utilities.speak(twiml, 'Please say the following phrase to authenticate ');
-  utilities.speak(twiml, config.chosenVoicePrintPhrase);
+  utilities.speak(twiml, config.chosenVoicePrintPhrase, config.contentLanguage);
 
   twiml.record({
     action: '/process_authentication',
@@ -296,7 +296,9 @@ app.post('/process_authentication', function(req, res) {
     } else {
 
       if(voiceIt.ResponseCode == "STTF"){
-        utilities.speak(twiml,"Authentication failed, it seems like you did not say " + config.chosenVoicePrintPhrase + ", please say the right phrase and try again.");
+        utilities.speak(twiml,"Authentication failed, it seems like you did not say ");
+        utilities.speak(twiml,config.chosenVoicePrintPhrase, config.contentLanguage);
+        utilities.speak(twiml," please say the right phrase and try again");
         numTries = numTries + 1;
         twiml.redirect('/authenticate');
       }
