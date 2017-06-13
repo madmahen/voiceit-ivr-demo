@@ -187,7 +187,7 @@ app.post('/process_enrollment', function(req, res) {
       userId: caller.userId,
       password: caller.password,
   	  urlToEnrollmentWav: recordingURL,
-  	  contentLanguage: 'en-US',
+  	  contentLanguage: config.contentLanguage,
   	callback: function(enrollmentResponse){
         console.log("The Response Was ",enrollmentResponse);
         enrollmentResponse = JSON.parse(enrollmentResponse);
@@ -198,7 +198,7 @@ app.post('/process_enrollment', function(req, res) {
           userId: caller.userId,
           password: caller.password,
           urlToEnrollmentWav: recordingURL,
-          contentLanguage: 'en-US',
+          contentLanguage: config.,
           callback: function(enrollmentResponse2){
             enrollmentResponse2 = JSON.parse(enrollmentResponse2);
             if ( enrollmentResponse2.ResponseCode === "SUC" ) {
@@ -246,7 +246,7 @@ app.post('/process_authentication', function(req, res) {
     userId: caller.userId,
     password: caller.password,
   	urlToAuthenticationWav: recordingURL,
-  	contentLanguage: 'en-US',
+  	contentLanguage: config.contentLanguage,
   	callback: function(authResponse){
       console.log("The Response Was ",authResponse);
       authResponse = JSON.parse(authResponse);
@@ -260,7 +260,7 @@ app.post('/process_authentication', function(req, res) {
           userId: caller.userId,
           password: caller.password,
           urlToAuthenticationWav: recordingURL,
-          contentLanguage: 'en-US',
+          contentLanguage: config.contentLanguage,
           callback: function(authResponse2){
               console.log("The Response Was ",authResponse2);
               var theResult = JSON.parse(authResponse2);

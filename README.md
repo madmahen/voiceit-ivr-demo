@@ -16,7 +16,7 @@ npm install
 
 ## Configure
 
-1. Set the environment variable `VOICEIT_DEVELOPER_ID` to your VoiceIt DeveloperId and `VOICEPRINT_PHRASE` to a phrase that you have pre - approved in your VoiceIt console
+1. Set the environment variable `VOICEIT_DEVELOPER_ID` to your VoiceIt DeveloperId and `VOICEPRINT_PHRASE` to a phrase that you have pre - approved in your VoiceIt console and `CONTENT_LANGUAGE` to associated contentLanguage
 2. `npm start`
 3. Point a Twilio Phone number to VoiceURL to your `http://app-name-here/incoming_call`
 
@@ -24,4 +24,4 @@ npm install
 
     $ heroku create
     $ git push heroku master
-    $ heroku config:set VOICEIT_DEVELOPER_ID=123456abcdef123456 VOICEPRINT_PHRASE='Never forget tomorrow is a new day'
+    $ heroku config:set VOICEIT_DEVELOPER_ID=123456abcdef123456 VOICEPRINT_PHRASE='Never forget tomorrow is a new day' CONTENT_LANGUAGE=en-US
