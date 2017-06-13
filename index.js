@@ -5,7 +5,6 @@ const utilities = require('./utilities');
 //Intiailize Twilio Stuff
 const twilio = require('twilio');
 const VoiceResponse = twilio.twiml.VoiceResponse;
-// const twilioClient = new twilio(config.twilioAccountSID, config.twilioAuthToken);
 
 //Initialize VoiceIt Stuff
 const myVoiceIt = require('VoiceIt');
@@ -49,7 +48,7 @@ app.post('/incoming_call', function(req, res) {
     if (getUserResponse.ResponseCode === "SUC") {
 
       // Greet the caller when their account profile is recognized by the VoiceIt API.
-      utilities.speak(twiml, "Welcome back to VoiceIt's VoiceAuthentication Demo, your phone number has been recognized");
+      utilities.speak(twiml, "Welcome back to the Voice It Voice Authentication Demo, your phone number has been recognized");
 
       // Let's provide the caller with an opportunity to enroll by typing `1` on
       // their phone's keypad.
@@ -75,7 +74,7 @@ app.post('/incoming_call', function(req, res) {
         callback: function(createUserResponse){
           console.log("The Server Responded with the JSON: ",createUserResponse);
           createUserResponse = JSON.parse(createUserResponse);
-          utilities.speak(twiml, "Welcome to VoiceIt's VoiceAuthentication Demo, you are a new user and will now be enrolled");
+          utilities.speak(twiml, "Welcome to the Voice It Voice Authentication Demo, you are a new user and will now be enrolled");
           twiml.redirect('/enroll');
           res.type('text/xml');
           res.send(twiml.toString());
@@ -108,7 +107,7 @@ app.post('/enroll_or_authenticate', function(req, res) {
           password: caller.password,
           callback: function(createUserResponse) {
             console.log("Create User Responded with the JSON: ", createUserResponse);
-            utilities.speak(twiml, "You have chosen to create a new account with your Voice, you will asked to say a phrase three times, then you will be able to log in with that phrase");
+            utilities.speak(twiml, "You have chosen to create a new account with your Voice, you will now be asked to say a phrase three times, then you will be able to log in with that phrase");
             twiml.redirect('/enroll');
             res.type('text/xml');
             res.send(twiml.toString());
@@ -170,10 +169,10 @@ app.post('/process_enrollment', function(req, res) {
       enrollCount++;
       // VoiceIt requires at least 3 successful enrollments.
       if (enrollCount > 2) {
-        utilities.speak(twiml, 'Thank you, recording receieved, you are now enrolled and ready to log in');
+        utilities.speak(twiml, 'Thank you, recording received, you are now enrolled and ready to log in');
         twiml.redirect('/authenticate');
       } else {
-        utilities.speak(twiml, 'Thank you, recording receieved, you will now be asked to record your phrase again');
+        utilities.speak(twiml, 'Thank you, recording received, you will now be asked to record your phrase again');
         twiml.redirect('/enroll?enrollCount=' + enrollCount);
       }
   }
