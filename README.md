@@ -10,17 +10,31 @@ A NodeJS and Twilio Based IVR Demo, showing an integration example between Voice
 - Heroku Account for hosting app
 -- [Heroku Developer Registration](https://signup.heroku.com)
 
-## Install:
+## One Click Install - Heroku
 
-npm install
+This will install the application and all the dependencies on Heroku (login required) for you. As part of the installation, the Heroku app will walk you through configuration of environment variables.  Please click on the following button to deploy the application.
 
-## Configure
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
+After installation you also need to log in to your twilio account and point a purchased phone number to this new application like shown below.
+
+<img src="PointTwilioPhoneNumber.png" alt="API Key and Token" width="400px" />
+
+You can now call the twilio number you have pointed to the application and try out the demo, and modify it as desired for your own use case.
+
+## Manual Install
+
+### Install
+`npm install`
+
+### Configure
 
 1. Set the environment variable `VOICEIT_DEVELOPER_ID` to your VoiceIt DeveloperId and `VOICEPRINT_PHRASE` to a phrase that you have pre - approved in your VoiceIt console and `CONTENT_LANGUAGE` to associated contentLanguage
 2. `npm start`
 3. Point a Twilio Phone number to VoiceURL to your `http://app-name-here/incoming_call`
 
-## Deploy to Heroku
+### Deploy to Heroku
 
     $ heroku create
     $ git push heroku master
