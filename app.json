@@ -10,7 +10,7 @@
     },
     "VOICEPRINT_PHRASE": {
         "description": "Your pre-approved voiceprint phrase from voiceIt, that you want users to use, for example 'Never forget tomorrow is a new day'",
-        "value":"Never forget tomorrow ia new day"
+        "value":"Never forget tomorrow is a new day"
     },
     "CONTENT_LANGUAGE": {
         "description": "The content language for the pre-approved voiceprint phrase for example (en-US)",
