@@ -9,7 +9,7 @@
       "value":"DEVELOPER_ID_HERE"
     },
     "VOICEPRINT_PHRASE": {
-        "description": "Your pre-approved voiceprint phrase from voiceIt, that you want users to use, for example 'Never forget tomorrow is a new day'",
+        "description": "Your pre-approved voiceprint phrase from VoiceIt, that you want users to use, for example 'Never forget tomorrow is a new day'",
         "value":"Never forget tomorrow is a new day"
     },
     "CONTENT_LANGUAGE": {
