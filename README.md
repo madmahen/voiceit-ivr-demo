@@ -19,7 +19,7 @@ This will install the application and all the dependencies on Heroku (login requ
 
 After installation you also need to log in to your twilio account and point a purchased phone number to this new application like shown below.
 
-<img src="/PointTwilioNumber.png" alt="API Key and Token" width="400px" />
+<img src="/PointTwilioNumber.png" alt="API Key and Token" width="800px" />
 
 You can now call the twilio number you have pointed to the application and try out the demo, and modify it as desired for your own use case.
 
