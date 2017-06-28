@@ -198,7 +198,7 @@ app.post('/process_enrollment', function(req, res) {
           userId: caller.userId,
           password: caller.password,
           urlToEnrollmentWav: recordingURL,
-          contentLanguage: config.,
+          contentLanguage: config.contentLanguage,
           callback: function(enrollmentResponse2){
             enrollmentResponse2 = JSON.parse(enrollmentResponse2);
             if ( enrollmentResponse2.ResponseCode === "SUC" ) {
