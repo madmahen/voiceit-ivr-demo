@@ -48,7 +48,7 @@ app.post('/incoming_call', function(req, res) {
     if (getUserResponse.ResponseCode === "SUC") {
 
       // Greet the caller when their account profile is recognized by the VoiceIt API.
-      utilities.speak(twiml, "Welcome back to the Voice It Voice Authentication Demo, your phone number has been recognized");
+      utilities.speak(twiml, "Welcome back to eBay Voice ID Demo, your phone number has been recognized");
 
       // Let's provide the caller with an opportunity to enroll by typing `1` on
       // their phone's keypad.
@@ -74,7 +74,7 @@ app.post('/incoming_call', function(req, res) {
         callback: function(createUserResponse){
           console.log("The Server Responded with the JSON: ",createUserResponse);
           createUserResponse = JSON.parse(createUserResponse);
-          utilities.speak(twiml, "Welcome to the Voice It Voice Authentication Demo, you are a new user and will now be enrolled");
+          utilities.speak(twiml, "Welcome to eBay Voice ID Demo, you are a new user and will now be enrolled");
           twiml.redirect('/enroll');
           res.type('text/xml');
           res.send(twiml.toString());
@@ -288,7 +288,7 @@ app.post('/process_authentication', function(req, res) {
       console.log("Authentication successful logic");
       utilities.speak(twiml, voiceIt.Result);
       //Thank them for calling
-      utilities.speak(twiml,'Thank you for calling voice its voice biometrics demo. Have a good day!');
+      utilities.speak(twiml,'Thank you for calling eBay Voice ID demo. Have a good day!');
       //Hang up
     } else if (numTries > 2) {
       //3 attempts failed
